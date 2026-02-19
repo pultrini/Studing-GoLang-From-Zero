@@ -11,9 +11,9 @@ func Exercicio1() {
 	nomeDosItens = append(nomeDosItens, "Arroz")
 	nomeDosItens = append(nomeDosItens, "banana")
 	nomeDosItens = append(nomeDosItens, "mandioca")
-	
+
 	compras, err := model.NewCompra("Seu ze", time.Now(), nomeDosItens)
-	if (err != nil) {
+	if err != nil {
 		fmt.Println(err)
 	}
 	fmt.Println(*compras)

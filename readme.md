@@ -7,7 +7,7 @@ This repository documents my journey learning Go (Golang), following the curricu
 ## 🚀 Learning Roadmap
 ### 1. Language & Syntax (The Foundation)
 Understanding the core mechanics and the simplicity of Go's design.
-- [ ] Fundamentals: Variables, Types, and Functions (func).
+- [X] Fundamentals: Variables, Types, and Functions (func).
 - [ ] Data Structures: struct, Interface, and Generics.
 - [ ] Memory Management: Pointers and robust Error Handling.
 - [ ] Ecosystem: Dependency management with go mod.

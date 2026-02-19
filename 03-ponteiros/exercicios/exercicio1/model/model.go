@@ -23,8 +23,7 @@ func NewCompra(mercado string, data time.Time, listaItens []string) (*ListarComp
 	if len(listaItens) == 0 {
 		return nil, errors.New("Itens obrigatorios")
 	}
-	
-	
+
 	var itens []ItensCompras
 
 	for _, item := range listaItens {
