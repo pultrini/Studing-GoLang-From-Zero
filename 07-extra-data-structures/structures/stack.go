@@ -5,11 +5,6 @@ import (
 	"fmt"
 )
 
-type Node struct {
-	Value int
-	Next  *Node
-}
-
 type LinkedStack struct {
 	Top  *Node
 	Size int

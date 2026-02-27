@@ -67,15 +67,17 @@ func (l *LinkedList) Remove(value int) {
 	}
 }
 
-func (l *LinkedList) Search(value int) {
+func (l *LinkedList) Search(value int) bool {
 	current := l.Head
 	for current != nil {
 		if current.Value == value {
 			fmt.Printf("valor %d encontrado\n", current.Value)
-			current = current.Next
+			return true
 		}
+		current = current.Next
 	}
 	fmt.Println("Valor nao encontrado")
+	return false
 }
 
 func (l *LinkedList) Size() int {
