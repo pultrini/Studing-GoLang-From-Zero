@@ -18,7 +18,6 @@ func ReadFile() {
 }
 
 func main() {
-
 	ReadFile()
 	fmt.Println("fim")
 }
