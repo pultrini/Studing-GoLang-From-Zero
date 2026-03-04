@@ -33,7 +33,7 @@ func NewCompra(mercado string, data time.Time, listaItens []string) (*ListarComp
 	compras := &ListarCompras{
 		Mercado:    mercado,
 		ListaItens: itens,
-		Data:       time.Now(),
+		Data:       data,
 	}
 	return compras, nil
 

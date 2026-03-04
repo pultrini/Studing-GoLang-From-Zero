@@ -9,5 +9,6 @@ import (
 func main() {
 	color.Blue("Hello World")
 	color.Red("Hello World")
-	fmt.Println("testando aqui")
+	/*	color.
+	 */fmt.Println("testando aqui")
 }
