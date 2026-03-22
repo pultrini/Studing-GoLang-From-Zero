@@ -1,0 +1,40 @@
+package main
+
+import (
+	"net/http"
+
+	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/render"
+)
+
+type product struct {
+	ID   int
+	Name string
+}
+
+func main() {
+	r := chi.NewRouter()
+	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Olá Mundo!"))
+	})
+
+	r.Get("/json", func(w http.ResponseWriter, r *http.Request) {
+		obj := map[string]string{"message": "success"}
+		render.JSON(w, r, obj)
+	})
+
+	r.Post("/product", func(w http.ResponseWriter, r *http.Request) {
+		var product product
+		render.DecodeJSON(r.Body, &product)
+		product.ID = 5
+		render.JSON(w, r, product)
+	})
+	r.Put("/product", func(w http.ResponseWriter, r *http.Request) {
+		var product product
+		render.DecodeJSON(r.Body, &product)
+		product.ID = 5
+		render.JSON(w, r, product)
+	})
+	http.ListenAndServe(":3000", r)
+
+}
