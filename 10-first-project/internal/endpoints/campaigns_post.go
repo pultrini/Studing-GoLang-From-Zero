@@ -1,0 +1,19 @@
+package endpoints
+
+import (
+	"emailn/internal/contract"
+	"net/http"
+
+	"github.com/go-chi/render"
+)
+
+func (h *Handler) CampaignPost(w http.ResponseWriter, r *http.Request) (interface{}, int, error) {
+	var request contract.NewCampaign
+	err := render.DecodeJSON(r.Body, &request)
+	if err != nil {
+		return nil, 0, err
+	}
+	id, err := h.CampaignService.Create(request)
+
+	return map[string]string{"id": id}, 201, err
+}
